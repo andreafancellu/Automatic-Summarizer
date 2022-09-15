@@ -1,0 +1,5 @@
+Soluzione con NASARI:
+    - Estrarre vettori di NASARI dal titolo in modo da avere un contesto
+    - Estrarre vettori di NASARI dal testo per ogni frase, (dopo aver rimosso stopwords ecc)
+    - Calcolare la similarità tra i vettori di NASARI del titolo e quelli del testo di ogni frase (prodotto cartesiano)
+    - Prendere le frasi col punteggio massimo di similarità complessivo tra i vettori
