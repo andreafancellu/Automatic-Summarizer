@@ -77,9 +77,22 @@ def get_nasari_from_title(text):
             for token in tokens:
                 if token.lower() == line.split(';')[1].lower():
                     nasari[token] = line.split(';')[2:]
-    return nasari                         
+    return nasari                    
+
+# finds sentences that occurs in NASARI vectrors retrieved from title
+def find_nasari_elems(text, nasari):     
+    sentences = []
+    flasg = False
+    text = ' '.join(remove_stopwords(tokenize_simple(text)))
+    for sentence in split_dot(text):
+        for token in tokenize_all(sentence):
+            for key in nasari.keys():
+                for elem in nasari[key]:
+                    if token.lower() == elem.split('_')[0].lower() and not flag:
+                        sentences.append(sentence)
+                        flag = True
+        flag = False
+    return sentences
 
 def overlap(list_1, list_2):
     return [value for value in list_1 if value in list_2]
-
-print(get_nasari_from_title('rock music over the years'))
