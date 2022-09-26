@@ -16,6 +16,7 @@ CUE_PATH = 'data/cue_sentences.txt'
 NASARI_PATH_1 = 'data/mini_NASARI.tsv'
 NASARI_PATH_2 = 'data/dd-small-nasari-15.txt'
 
+
 def split_dot(text):
     return text.split('.')
 
